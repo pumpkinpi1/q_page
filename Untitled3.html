@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: powderblue;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 4rem; /* Larger text */
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.1); 
+        }
+        button:active {
+            transform: scale(1); 
+        }
+        .yes-button {
+            padding: 20px 40px; 
+            font-size: 2rem;
+            background-color: #28a745; 
+        }
+        .yes-button:hover {
+            background-color: #218838; 
+        }
+        .no-button {
+            padding: 10px 20px; /* Smaller size */
+            font-size: 1.5rem; /* Button text size */
+            background-color: #dc3545; /* Red color */
+        }
+        .no-button:hover {
+            background-color: #c82333; 
+        }
+        .response {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .response img {
+            max-width: 500px;
+            height: auto;
+            margin-top: 10px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .response-text {
+            font-size: 2rem; 
+            color: #444;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <img src="cat.jpg" width="700" height="500">
+    <div class="question">If you're bag... be my valentine?</div>
+    <div class="buttons">
+        <button class="yes-button" onclick="handleClick('Yes')">Yes</button>
+        <button class="no-button" onclick="handleClick('No')">No</button>
+    </div>
+    <div class="response" id="response"></div>
+    <script>
+        function handleClick(answer) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = ''; // Clear any previous content
+
+            if (answer === 'Yes') {
+                responseDiv.innerHTML = `
+                    <p class="response-text">Correct answer ;)</p>
+                    <img src="IMG_1810.jpg">
+                `;
+            } else {
+                responseDiv.innerHTML = `
+                    <p class="response-text">Wot do u mean by that .</p>
+                    <img src="IMG_1810.jpg">
+                `;
+            }
+        }
+	  
+    </script>
+</body>
+</html>
